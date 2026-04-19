@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viagem Peru | Victor & Maria</title>
+    <title>Expedição Peru | Victor & Maria</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -11,7 +11,7 @@
     <header class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Viagem Peru</h1>
+            <h1>Expedição Peru</h1>
             <p>11 a 21 de Setembro | Roteiro, Bagagem e Controle Financeiro</p>
         </div>
     </header>
@@ -40,7 +40,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'Lima')"><i class="fa-solid fa-city"></i> Lima</button>
                 <button class="tab-btn" onclick="openTab(event, 'Cusco')"><i class="fa-solid fa-mountain-sun"></i> Cusco</button>
                 <button class="tab-btn" onclick="openTab(event, 'Dicas')"><i class="fa-solid fa-layer-group"></i> Estratégia de Bagagem</button>
-                <button class="tab-btn" onclick="openTab(event, 'Gastos')"><i class="fa-solid fa-calculator"></i> Gastos</button>
+                <button class="tab-btn" onclick="openTab(event, 'Gastos')"><i class="fa-solid fa-calculator"></i> Gastos & Extrato</button>
             </div>
 
             <div id="Lima" class="tab-content active">
@@ -267,26 +267,69 @@
             </div>
 
             <div id="Gastos" class="tab-content">
+                
+                <div class="doc-group">
+                    <div class="doc-group-header">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                        <h3>Extrato Consolidado (Realidade)</h3>
+                    </div>
+                    
+                    <div class="budget-summary">
+                        <div class="budget-card">
+                            <h4><i class="fa-solid fa-user"></i> Victor</h4>
+                            <p id="total-victor" style="color: var(--text-dark);">R$ 0,00</p>
+                        </div>
+                        <div class="budget-card">
+                            <h4><i class="fa-solid fa-user"></i> Maria</h4>
+                            <p id="total-maria" style="color: var(--text-dark);">R$ 0,00</p>
+                        </div>
+                        <div class="budget-card" style="border-bottom: 4px solid var(--peru-red);">
+                            <h4><i class="fa-solid fa-sack-dollar"></i> Custo Total</h4>
+                            <p id="total-geral" style="color: var(--peru-red);">R$ 0,00</p>
+                        </div>
+                    </div>
+
+                    <div class="expenses-grid" style="margin-top: 1rem;">
+                        <table class="expenses-table">
+                            <thead>
+                                <tr>
+                                    <th>Descrição / Item</th>
+                                    <th>Victor (R$)</th>
+                                    <th>Maria (R$)</th>
+                                    <th>Subtotal (R$)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="extrato-tbody">
+                                </tbody>
+                        </table>
+                    </div>
+
+                    <div class="look-box" style="margin-top: 1.5rem;">
+                        <h5><i class="fa-solid fa-code"></i> Para adicionar novas compras (Roupas, Mochila, etc):</h5>
+                        <p>Basta abrir o arquivo <code>js/script.js</code> e adicionar uma nova linha no painel de dados. A tabela e as somatórias de vocês dois se ajustam automaticamente, sem chance de errar a conta matemática.</p>
+                    </div>
+                </div>
+
+                <hr style="border: 0; height: 1px; background: var(--accent-neutral); margin: 2rem 0;">
+
                 <div class="doc-group">
                     <div class="doc-group-header">
                         <i class="fa-solid fa-wallet"></i>
-                        <h3>Teto de Segurança (Máx: ~3.000 Soles)</h3>
+                        <h3>Teto de Segurança p/ Levar (Máx: ~3.000 Soles)</h3>
                     </div>
                     <div class="budget-summary">
                         <div class="budget-card">
                             <h4><i class="fa-solid fa-credit-card"></i> Cartão (70%)</h4>
-                            <p><strong>~2.100 Soles</strong></p>
-                            <span>Uso: Restaurantes de Lima, Ubers, Shoppings e Agências.</span>
+                            <p><strong>~2.100 PEN</strong></p>
+                            <span>Uso: Restaurantes em Lima, Ubers, Compras em Shoppings e Agências.</span>
                         </div>
                         <div class="budget-card">
                             <h4><i class="fa-solid fa-money-bill-1-wave"></i> Dinheiro Físico (30%)</h4>
-                            <p><strong>~900 Soles</strong></p>
-                            <span>Uso: Feiras, Gorjetas, Resgate na Montanha e Entradas.</span>
+                            <p><strong>~900 PEN</strong></p>
+                            <span>Uso: Mercados de Artesanato, Gorjetas, Cavalos, Banheiros e Entrada de Maras.</span>
                         </div>
                     </div>
                 </div>
-
-                <br>
 
                 <div class="expenses-grid">
                     <div class="day-item tips-card">
@@ -303,72 +346,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>11 Set (Lima)</td>
-                                        <td>Almoço Punto Azul + Jantar leve no Airbnb</td>
-                                        <td>120</td>
-                                        <td>Econômico (Cartão)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>12 Set (Ica)</td>
-                                        <td>Tour Huacachina/Paracas + Lanches rápidos</td>
-                                        <td>350</td>
-                                        <td>Obrigatório (Misto)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>13 Set (Lima)</td>
-                                        <td>Jantar Premium (Huaca Pucllana) + Uber/Cafés</td>
-                                        <td>300</td>
-                                        <td>Luxo (Cartão)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>14 Set (Lima)</td>
-                                        <td>Almoço farto (Isolina) + Jantar econômico</td>
-                                        <td>200</td>
-                                        <td>Moderado (Cartão)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>15 Set (Cusco)</td>
-                                        <td>Táxi Aeroporto + Refeições levíssimas (Aclimatação)</td>
-                                        <td>80</td>
-                                        <td>Super Econômico</td>
-                                    </tr>
-                                    <tr>
-                                        <td>16 Set (Cusco)</td>
-                                        <td>Lembranças no Centro Artesanal + Jantar Chicha</td>
-                                        <td>350</td>
-                                        <td>Variável (Espécie)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>17 Set (MP)</td>
-                                        <td>Bus Consettur ($48) + Almoço Indio Feliz</td>
-                                        <td>350</td>
-                                        <td>Obrigatório (Cartão)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>18 Set (Vale)</td>
-                                        <td>Boleto Turístico (260) + Tour (100) + Almoços</td>
-                                        <td>410</td>
-                                        <td>Obrigatório (Espécie)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>19 Set (Mont.)</td>
-                                        <td>Tour (150) + Cavalos Emergência (180)</td>
-                                        <td>330</td>
-                                        <td>Flexível (Espécie)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>20 Set (Maras)</td>
-                                        <td>Tour (120) + Entradas Maras (40) + Jantar</td>
-                                        <td>280</td>
-                                        <td>Moderado (Misto)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>21 Set (Volta)</td>
-                                        <td>Táxi Aeroporto + Lanches Rápidos</td>
-                                        <td>80</td>
-                                        <td>Econômico (Cartão)</td>
-                                    </tr>
+                                    <tr><td>11 Set (Lima)</td><td>Almoço Punto Azul + Jantar leve no Airbnb</td><td>120</td><td>Econômico (Cartão)</td></tr>
+                                    <tr><td>12 Set (Ica)</td><td>Tour Huacachina/Paracas + Lanches rápidos</td><td>350</td><td>Obrigatório (Misto)</td></tr>
+                                    <tr><td>13 Set (Lima)</td><td>Jantar Premium (Huaca Pucllana) + Uber/Cafés</td><td>300</td><td>Luxo (Cartão)</td></tr>
+                                    <tr><td>14 Set (Lima)</td><td>Almoço farto (Isolina) + Jantar econômico</td><td>200</td><td>Moderado (Cartão)</td></tr>
+                                    <tr><td>15 Set (Cusco)</td><td>Táxi Aeroporto + Refeições levíssimas (Aclimatação)</td><td>80</td><td>Super Econômico</td></tr>
+                                    <tr><td>16 Set (Cusco)</td><td>Lembranças no Centro Artesanal + Jantar Chicha</td><td>350</td><td>Variável (Espécie)</td></tr>
+                                    <tr><td>17 Set (MP)</td><td>Bus Consettur ($48) + Almoço Indio Feliz</td><td>350</td><td>Obrigatório (Cartão)</td></tr>
+                                    <tr><td>18 Set (Vale)</td><td>Boleto Turístico (260) + Tour (100) + Almoços</td><td>410</td><td>Obrigatório (Espécie)</td></tr>
+                                    <tr><td>19 Set (Mont.)</td><td>Tour (150) + Cavalos Emergência (180)</td><td>330</td><td>Flexível (Espécie)</td></tr>
+                                    <tr><td>20 Set (Maras)</td><td>Tour (120) + Entradas Maras (40) + Jantar</td><td>280</td><td>Moderado (Misto)</td></tr>
+                                    <tr><td>21 Set (Volta)</td><td>Táxi Aeroporto + Lanches Rápidos</td><td>80</td><td>Econômico (Cartão)</td></tr>
                                 </tbody>
                             </table>
                         </div>
