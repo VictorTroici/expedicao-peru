@@ -405,3 +405,72 @@ body {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* =========================================
+   ESTILOS DA ABA DE GASTOS
+   ========================================= */
+.budget-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.budget-card {
+    background: var(--bg-main);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 1px solid var(--accent-neutral);
+}
+
+.budget-card h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.budget-card p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--andes-green);
+    margin-bottom: 0.5rem;
+}
+
+.budget-card span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: block;
+}
+
+.expenses-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.expenses-table th, .expenses-table td {
+    text-align: left;
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--accent-neutral);
+}
+
+.expenses-table th {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+    .budget-summary {
+        grid-template-columns: 1fr;
+    }
+    
+    .expenses-table th:nth-child(2), 
+    .expenses-table td:nth-child(2) {
+        display: none; /* Esconde a coluna de 'Foco' no celular para caber */
+    }
+}
