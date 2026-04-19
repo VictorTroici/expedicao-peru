@@ -272,7 +272,6 @@ body {
 
 /* =========================================
    ESTILOS DA ABA DE DOCUMENTOS (ANEXOS)
-   Mantido caso vocês voltem a usar no futuro
    ========================================= */
 .docs-container {
     display: flex;
@@ -287,11 +286,6 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     border-left: 5px solid var(--text-dark);
 }
-
-/* Paleta Neutra e Terrosa para os grupos de anexos */
-.doc-group:nth-child(1) { border-left-color: var(--text-dark); } 
-.doc-group:nth-child(2) { border-left-color: var(--andes-green); } 
-.doc-group:nth-child(3) { border-left-color: var(--terracotta); } 
 
 .doc-group-header {
     display: flex;
@@ -312,71 +306,13 @@ body {
     font-size: 1.2rem;
 }
 
-.doc-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 0;
-    border-bottom: 1px solid var(--accent-neutral);
-}
-
-.doc-row:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.doc-title {
-    font-weight: 500;
-    color: var(--text-muted);
-}
-
-.doc-actions {
-    display: flex;
-    gap: 10px;
-}
-
-/* Botões de Ação para PDFs (Cores Neutras e Terrosas) */
-.btn-pdf, .btn-link {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
-}
-
-.btn-pdf {
-    background-color: #FBE9E7;
-    color: var(--terracotta);
-    border: 1px solid #FFCCBC;
-}
-
-.btn-pdf:hover {
-    background-color: var(--terracotta);
-    color: #FFFFFF;
-}
-
-/* Links em Grafite Neutro */
-.btn-link {
-    background-color: var(--bg-main);
-    color: var(--text-dark);
-    border: 1px solid #BDBDBD;
-}
-
-.btn-link:hover {
-    background-color: var(--text-dark);
-    color: #FFFFFF;
-}
-
 /* =========================================
    ESTILOS DA ABA DE GASTOS
    ========================================= */
 .budget-summary {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* Alterado para permitir 3 colunas e alinhar os totais perfeitamente */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     margin-bottom: 2rem;
 }
@@ -431,43 +367,17 @@ body {
 
 /* Responsividade Geral */
 @media (max-width: 768px) {
-    .day-item {
-        flex-direction: column;
-    }
-    .day-img {
-        width: 100%;
-        height: 220px;
-    }
-    .tabs {
-        flex-direction: column;
-        align-items: center;
-    }
-    .tab-btn {
-        width: 100%;
-        max-width: 300px;
-    }
-    .doc-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    .doc-actions {
-        width: 100%;
-    }
-    .btn-pdf, .btn-link {
-        flex: 1;
-        justify-content: center;
-    }
+    .day-item { flex-direction: column; }
+    .day-img { width: 100%; height: 220px; }
+    .tabs { flex-direction: column; align-items: center; }
+    .tab-btn { width: 100%; max-width: 300px; }
+    .budget-summary { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
-    .budget-summary {
-        grid-template-columns: 1fr;
-    }
-    
     .expenses-table th:nth-child(2), 
     .expenses-table td:nth-child(2) {
-        display: none; /* Esconde a coluna de 'Foco' no celular para caber */
+        display: none;
     }
 }
 
