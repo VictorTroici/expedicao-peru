@@ -272,6 +272,7 @@ body {
 
 /* =========================================
    ESTILOS DA ABA DE DOCUMENTOS (ANEXOS)
+   Mantido caso vocês voltem a usar no futuro
    ========================================= */
 .docs-container {
     display: flex;
@@ -370,42 +371,6 @@ body {
     color: #FFFFFF;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .day-item {
-        flex-direction: column;
-    }
-    .day-img {
-        width: 100%;
-        height: 220px;
-    }
-    .tabs {
-        flex-direction: column;
-        align-items: center;
-    }
-    .tab-btn {
-        width: 100%;
-        max-width: 300px;
-    }
-    .doc-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    .doc-actions {
-        width: 100%;
-    }
-    .btn-pdf, .btn-link {
-        flex: 1;
-        justify-content: center;
-    }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 /* =========================================
    ESTILOS DA ABA DE GASTOS
    ========================================= */
@@ -464,6 +429,37 @@ body {
     letter-spacing: 1px;
 }
 
+/* Responsividade Geral */
+@media (max-width: 768px) {
+    .day-item {
+        flex-direction: column;
+    }
+    .day-img {
+        width: 100%;
+        height: 220px;
+    }
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    .tab-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    .doc-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .doc-actions {
+        width: 100%;
+    }
+    .btn-pdf, .btn-link {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
 @media (max-width: 600px) {
     .budget-summary {
         grid-template-columns: 1fr;
@@ -473,4 +469,9 @@ body {
     .expenses-table td:nth-child(2) {
         display: none; /* Esconde a coluna de 'Foco' no celular para caber */
     }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
