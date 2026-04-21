@@ -28,13 +28,13 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    background: linear-gradient(135deg, #ff0000);
+    background: linear-gradient(135deg, #424242, #212121);
     height: 30vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #ffffff;
+    color: #FFFFFF;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
@@ -62,7 +62,7 @@ body {
 
 .hero p {
     font-size: 1.1rem;
-    color: #ffffff;
+    color: #BDBDBD;
     margin-top: 5px;
 }
 
