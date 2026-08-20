@@ -36,12 +36,17 @@ const gastosViagem = [
     { desc: "Trem Machu Picchu", victor: 1052.00, maria: 1052.00 },
     { desc: "Ingresso Machu Picchu", victor: 254.00, maria: 254.00 },
     { desc: "Airbnb (Victor Pagou)", victor: 200.00, maria: 0.00 },
-    { desc: "Ônibus Consettur (US$ 24)", victor: 125.00, maria: 125.00 },
-    { desc: "Agência Chullos (3 Tours: US$ 85)", victor: 435.00, maria: 435.00 },
+    { desc: "Ônibus Consettur (US$ 24 - Ida e Volta)", victor: 125.00, maria: 125.00 },
+    { desc: "Agência Day Tours Peru (Huacachina)", victor: 371.00, maria: 371.00 },
+    { desc: "Agência Inka Altitude (Vale Sagrado)", victor: 137.00, maria: 137.00 },
+    { desc: "Agência Chullos (Montanha Colorida)", victor: 104.00, maria: 104.00 },
+    { desc: "Agência Chullos (Laguna Humantay)", victor: 113.00, maria: 113.00 },
+    { desc: "Itens para Viagem", victor: 394.00, maria: 269.00 },
+    { desc: "Assento viagem IDA", victor: 105.00, maria: 95.00 },
     { desc: "Boleto Turístico (130 Soles)", victor: 185.00, maria: 185.00 },
     { desc: "Entradas (Maras, Laguna, Montanha)", victor: 95.00, maria: 95.00 },
     { desc: "Cavalos (Humantay e Montanha)", victor: 260.00, maria: 260.00 },
-    { desc: "Cota: Alimentação, Ubers e Lembranças", victor: 1100.00, maria: 1100.00 }
+    
     // MODELO PARA ADICIONAR NOVOS GASTOS FUTUROS (Basta remover as barras duplas '//'):
     // { desc: "Mochila Nova Victor", victor: 350.00, maria: 0.00 },
     // { desc: "Bota de Trilha Maria", victor: 0.00, maria: 450.00 },
